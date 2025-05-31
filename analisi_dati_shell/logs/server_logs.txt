@@ -1,0 +1,6 @@
+2022-09-28 13:55:55 info User logged on successfully
+2022-09-28 13:56:22 error The password is incorrect
+2022-09-28 13:56:48 warning The file storage is 75% full
+2022-09-28 15:55:55 info User logged on successfully
+2022-09-28 15:56:22 error The username is incorrect
+2022-09-28 15:56:48 warning The file storage is 90% full
