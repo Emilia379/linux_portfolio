@@ -29,7 +29,7 @@ l'esistenza di file di log e file utente, e visualizzarne il contenuto per una p
 Di seguito è riportata una schermata del terminale che documenta i passaggi eseguiti e i relativi output. Ogni 
 comando è spiegato per chiarezza.
 
-![Screenshot del Terminale che mostra l'esercizio](images/schermata_navigazione_log.png) 
+![Screenshot del Terminale che mostra l'esercizio](/images/schermata_analisi_log.png)
 *(Nota: L'immagine è stata rinominata per chiarezza nel portfolio e si trova nella directory `images/`)*
 
 ### Spiegazione dei Comandi Eseguiti:
