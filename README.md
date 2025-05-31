@@ -12,8 +12,8 @@ capacità di navigare nel filesystem, gestire file e directory, cercare e filtra
 
 * **[Esercizi Base](esercizi_base/README.md)**: Fondamenti di navigazione, creazione, copia, spostamento e 
 cancellazione di file e directory.
-* **[Esercizi con `find`, `grep` e Pipe](esercizi_find_grep_pipe/README.md)**: Dimostrazioni di capacità avanzate di 
-ricerca, filtraggio e concatenazione di comandi.
+* **[Analisi e Visualizzazione Dati (con `find`, `grep` e Pipe)](analisi_dati_shell/README.md)**: Dimostrazioni di 
+capacità avanzate di ricerca, filtraggio e concatenazione di comandi applicate a log e dati.
 * **(Aggiungere qui altri moduli man mano che li crei, es. "Scripting Bash Semplice", "Gestione Permessi", ecc.)**
 
 ---
