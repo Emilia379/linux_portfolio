@@ -14,8 +14,8 @@ capacità di navigare nel filesystem, gestire file e directory, cercare e filtra
 cancellazione di file e directory.
 * **[Analisi e Visualizzazione Dati (con `find`, `grep` e Pipe)](analisi_dati_shell/README.md)**: Dimostrazioni di 
 capacità avanzate di ricerca, filtraggio e concatenazione di comandi applicate a log e dati.
-* **(Aggiungere qui altri moduli man mano che li crei, es. "Scripting Bash Semplice", "Gestione Permessi", ecc.)**
-
+* **[Gestione dei permessi di file e directory in Linux](gestione_permessi/README.md)**: Esercizi pratici sulla 
+comprensione e la modifica dei permessi di file e directory per la sicurezza ed il controllo degli accessi.
 ---
 
 ## Tecnologie Utilizzate
