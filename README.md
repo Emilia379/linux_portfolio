@@ -5,6 +5,8 @@ explanations, commands, and example outputs, often supported by screenshots, to 
 
 ## Contents
 
+* **[Essential Linux Commands: Navigation and Exploration](linux_basics/README.md):** Fundamental commands for navigating the filesystem, inspecting directories, and 
+viewing file contents.
 * **[Data Filtering and Manipulation with `grep` and Pipes](analisi_dati_shell/README.md):** Demonstrations of advanced data searching, filtering, and combining commands 
 using standard input/output redirection.
 * **[File and Directory Permissions Management](gestione_permessi/README.md):** Practical exercises on understanding, checking, and modifying file/directory permissions 
@@ -20,3 +22,4 @@ This portfolio will be continuously updated with new projects and expanded skill
 
 ---
 
+**Contact:** [www.linkedin.com/in/emilia-falcone-27ab55147]
