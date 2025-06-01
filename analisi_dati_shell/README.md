@@ -100,6 +100,7 @@ messaggi.
 
 Questa sezione approfondisce l'uso dei comandi `grep` per filtrare dati specifici da file di log e `pipe` (`|`) per 
 concatenare i comandi, permettendo un'analisi più complessa.
+
 ![Nuova schermata esercizi Grep e Pipe](/images/nuova_grep_pipe.png)
 
 1.  **Ricerca di Errori nei Log:**
@@ -163,18 +164,6 @@ di file specifici.
     * **Comando:** `grep -c 'error' server_logs.txt`
     * **Output Esempio:** `6` (o il numero effettivo di errori)
     * **Spiegazione:** L'opzione `-c` di `grep` restituisce solo il conteggio delle righe che contengono il pattern.
-
-7.  **Filtrare Log e Estrarre Campi Specifici (Esempio aggiuntivo con `awk`):**
-    * **Obiettivo:** Visualizzare solo il timestamp e il messaggio per le righe di tipo "info" nel log.
-    * **Comando:** `grep 'info' server_logs.txt | awk '{print $1, $4, $5, $6}'`
-    * **Output Esempio:**
-        ```
-        2022-09-28 13:55:55 User logged on successfully
-        2022-09-28 16:55:55 User navigated to settings page
-        2022-09-29 13:55:55 User logged on successfully
-        ```
-    * **Spiegazione:** I dati "info" vengono prima filtrati con `grep`, poi l'output viene passato tramite `pipe` a 
-`awk`, che seleziona e stampa i campi desiderati (colonne 1, 4, 5, 6).
 
 ---
 
