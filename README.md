@@ -22,4 +22,5 @@ This portfolio will be continuously updated with new projects and expanded skill
 
 ---
 
-**Contact:** [www.linkedin.com/in/emilia-falcone-27ab55147]
+**Contact:** 
+[Emilia Falcone (www.linkedin.com/in/emilia-falcone-27ab55147)]
