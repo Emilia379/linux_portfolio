@@ -100,8 +100,7 @@ messaggi.
 
 Questa sezione approfondisce l'uso dei comandi `grep` per filtrare dati specifici da file di log e `pipe` (`|`) per 
 concatenare i comandi, permettendo un'analisi più complessa.
-
-![Screenshot degli esercizi con Grep e Pipe](/images/Grep e pipe.png)
+![Nuova schermata esercizi Grep e Pipe](/images/nuova_grep_pipe.png)
 
 1.  **Ricerca di Errori nei Log:**
     * **Obiettivo:** Trovare tutte le occorrenze della stringa "error" nel file `server_logs.txt`.
