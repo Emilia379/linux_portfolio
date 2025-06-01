@@ -1,220 +1,107 @@
-# Esercizio: Navigazione, Esplorazione e Visualizzazione di Dati con la Shell
+# Data Filtering and Manipulation Exercises with `grep` and Pipes
 
-Questo esercizio dimostra le capacità di navigazione nel filesystem Linux e l'uso di comandi per ispezionare il 
-contenuto di directory e file. Simula un contesto di analisi dati, dove è necessario accedere e visualizzare 
-informazioni da file di log e elenchi utenti.
-
----
-
-## Obiettivi dell'Esercizio
-
-* Utilizzare `pwd` per conoscere la directory corrente.
-* Elencare il contenuto di directory con `ls`.
-* Cambiare directory usando percorsi relativi e assoluti con `cd`.
-* Visualizzare il contenuto completo di un file con `cat`.
-* Visualizzare le prime righe di un file con `head`.
-* Dimostrare la gestione degli errori comuni (es. directory non trovata).
-
----
-
-## Scenario
-
-Simuliamo di essere un analista di sistema o dati che deve esplorare alcune directory di progetto, verificare 
-l'esistenza di file di log e file utente, e visualizzarne il contenuto per una prima analisi.
-
----
-
-## Passaggi Eseguiti e Output
-
-Di seguito è riportata una schermata del terminale che documenta i passaggi eseguiti e i relativi output. Ogni 
-comando è spiegato per chiarezza.
-
-![Screenshot del Terminale che mostra l'esercizio](/images/schermata_analisi_log.png)
-*(Nota: L'immagine è stata rinominata per chiarezza nel portfolio e si trova nella directory `images/`)*
-
-### Spiegazione dei Comandi Eseguiti:
-
-1.  **`pwd`**
-    * **Comando:** `pwd`
-    * **Descrizione:** Stampa la directory di lavoro corrente. Utile per orientarsi.
-    * **Output:** `/home/analyst`
-
-2.  **`ls`**
-    * **Comando:** `ls`
-    * **Descrizione:** Elenca il contenuto della directory corrente.
-    * **Output:** `logs projects reports temp` (mostra le sottodirectory principali)
-
-3.  **`cd reports`**
-    * **Comando:** `cd reports`
-    * **Descrizione:** Cambia la directory corrente in `reports` (percorso relativo alla directory attuale 
-`/home/analyst`).
-    * **Output:** Nessun output specifico, ma il prompt cambia, indicando la nuova directory.
-
-4.  **`ls` (in `reports`)**
-    * **Comando:** `ls`
-    * **Descrizione:** Elenca il contenuto della nuova directory corrente (`reports`).
-    * **Output:** `users` (mostra una sottodirectory all'interno di `reports`)
-
-5.  **`cd users`**
-    * **Comando:** `cd users`
-    * **Descrizione:** Cambia la directory corrente in `users` (percorso relativo alla directory attuale 
-`/home/analyst/reports`).
-    * **Output:** Nessun output specifico.
-
-6.  **`ls` (in `reports/users`)**
-    * **Comando:** `ls`
-    * **Descrizione:** Elenca il contenuto della directory `reports/users`.
-    * **Output:** `Q1_added_users.txt Q1_deleted_users.txt` (mostra i file degli utenti)
-
-7.  **`cat Q1_added_users.txt`**
-    * **Comando:** `cat Q1_added_users.txt`
-    * **Descrizione:** Visualizza l'intero contenuto del file `Q1_added_users.txt`. Questo file sembra contenere un 
-elenco di utenti con employee ID, username e dipartimento.
-    * **Output:** Dati tabulari degli utenti.
-
-8.  **`cd logs` (tentativo fallito)**
-    * **Comando:** `cd logs`
-    * **Descrizione:** Tentativo di cambiare directory in `logs` usando un percorso relativo. La directory `logs` non 
-esiste in `/home/analyst/reports/users`. Questo dimostra la gestione degli errori.
-    * **Output:** `-bash: cd: logs: No such file or directory` (messaggio di errore)
-
-9.  **`cd /home/analyst/logs`**
-    * **Comando:** `cd /home/analyst/logs`
-    * **Descrizione:** Cambia la directory in `logs` usando un **percorso assoluto**. Questo supera l'errore 
-precedente navigando direttamente alla directory `logs` dalla radice del filesystem.
-    * **Output:** Nessun output specifico.
-
-10. **`ls` (in `logs`)**
-    * **Comando:** `ls`
-    * **Descrizione:** Elenca il contenuto della directory `logs`.
-    * **Output:** `server_logs.txt`
-
-11. **`head server_logs.txt`**
-    * **Comando:** `head server_logs.txt`
-    * **Descrizione:** Visualizza le prime 10 righe (di default) del file `server_logs.txt`. Questo è utile per avere 
-una rapida panoramica di un file di log senza caricarlo interamente.
-    * **Output:** Le prime righe del file di log, che mostrano timestamp, livelli di log (info, error, warning) e 
-messaggi.
-
-### Esercizi di Filtraggio e Manipolazione Dati con `grep` e Pipe
-
-Questa sezione approfondisce l'uso dei comandi `grep` per filtrare dati specifici da file di log e `pipe` (`|`) per 
-concatenare i comandi, permettendo un'analisi più complessa.
+This section explores the use of `grep` commands to filter specific data from log files and `pipe` (`|`) to concatenate commands, allowing for more complex analysis.
 
 ![Nuova schermata esercizi Grep e Pipe](/images/nuova_grep_pipe.png)
 
-1.  **Ricerca di Errori nei Log:**
-    * **Obiettivo:** Trovare tutte le occorrenze della stringa "error" nel file `server_logs.txt`.
-    * **Comando:** `grep 'error' server_logs.txt`
-    * **Output Esempio:**
-        ```
-        2022-09-28 13:56:22 error The password is incorrect
-        2022-09-28 15:56:22 error The username is incorrect
-        2022-09-28 16:56:22 error The password is incorrect
-        2022-09-29 13:56:22 error An unexpected error occurred
-        2022-09-29 15:56:22 error Unauthorized access
-        2022-09-29 16:56:22 error Unauthorized access
-        ```
-    * **Spiegazione:** Il comando `grep 'pattern' file` cerca le righe che contengono esattamente la 'pattern' 
-specificata.
+### 1. Searching for Errors in Logs:
+* **Objective:** To find all occurrences of the string "error" in the `server_logs.txt` file.
+* **Command:** `grep 'error' server_logs.txt`
+* **Output Example:**
+    ```
+    2022-09-28 13:56:22 error The password is incorrect
+    2022-09-28 15:56:22 error The username is incorrect
+    2022-09-28 16:56:22 error The password is incorrect
+    2022-09-29 13:56:22 error An unexpected error occurred
+    2022-09-29 15:56:22 error Unauthorized access
+    2022-09-29 16:56:22 error Unauthorized access
+    ```
+* **Explanation:** The `grep 'pattern' file` command searches for lines that contain the exact 'pattern' specified.
 
-2.  **Ricerca Specifica di Utenti nei Report:**
-    * **Obiettivo:** Cercare la stringa "users" nel file `Q1_added_users.txt` (o altri file di report).
-    * **Comando:** `ls /home/analyst/reports | grep users`
-    * **Output Esempio:**
-        ```
-        Q1_added_users.txt
-        Q1_deleted_users.txt
-        ```
-    * **Spiegazione:** La `pipe` (`|`) reindirizza l'output del comando `ls` come input per `grep`, che poi filtra le 
-righe contenenti "users".
+### 2. Specific User Search in Reports:
+* **Objective:** To search for the string "users" in the `/home/analyst/reports` directory.
+* **Command:** `ls /home/analyst/reports | grep users`
+* **Output Example:**
+    ```
+    Q1_added_users.txt
+    Q1_deleted_users.txt
+    ```
+* **Explanation:** The `pipe` (`|`) redirects the output of the `ls` command as input for `grep`, which then filters lines containing "users".
 
-3.  **Ricerca di Stringhe Specifiche all'Interno di Nomi File:**
-    * **Obiettivo:** Trovare i file nella directory corrente che contengono la stringa "Q1".
-    * **Comando:** `ls | grep Q1`
-    * **Output Esempio:**
-        ```
-        Q1_access.txt
-        Q1_added_users.txt
-        Q1_deleted_users.txt
-        ```
-    * **Spiegazione:** Simile all'esempio precedente, questo mostra come filtrare l'output di `ls` per trovare nomi 
-di file specifici.
+### 3. Searching for Specific Strings Within File Names:
+* **Objective:** To find files in the current directory that contain the string "Q1".
+* **Command:** `ls | grep Q1`
+* **Output Example:**
+    ```
+    Q1_access.txt
+    Q1_added_users.txt
+    Q1_deleted_users.txt
+    ```
+* **Explanation:** Similar to the previous example, this shows how to filter `ls` output to find specific file names.
 
-4.  **Ricerca di un Utente Specifico in un File Report:**
-    * **Obiettivo:** Trovare le informazioni sull'utente "jhill" nel file `Q2_deleted_users.txt`.
-    * **Comando:** `grep jhill Q2_deleted_users.txt`
-    * **Output Esempio:**
-        ```
-        1025 jhill Sales
-        ```
-    * **Spiegazione:** `grep` può essere usato per cercare stringhe specifiche all'interno del contenuto di un file.
+### 4. Searching for a Specific User in a Report File:
+* **Objective:** To find information about user "jhill" in the `Q2_deleted_users.txt` file.
+* **Command:** `grep jhill Q2_deleted_users.txt`
+* **Output Example:**
+    ```
+    1025 jhill Sales
+    ```
+* **Explanation:** `grep` can be used to search for specific strings within a file's content.
 
-5.  **Ricerca di un Dipartimento Specifico in un File Report:**
-    * **Obiettivo:** Trovare tutti gli utenti nel dipartimento "Human Resources" nel file `Q4_added_users.txt`.
-    * **Comando:** `grep "Human Resources" Q4_added_users.txt`
-    * **Output Esempio:**
-        ```
-        1151 sshah   Human Resources
-        1145 msosa   Human Resources
-        ```
-    * **Spiegazione:** Utile per estrarre dati specifici basati su un criterio.
+### 5. Searching for a Specific Department in a Report File:
+* **Objective:** To find all users in the "Human Resources" department in the `Q4_added_users.txt` file.
+* **Command:** `grep "Human Resources" Q4_added_users.txt`
+* **Output Example:**
+    ```
+    1151 sshah Human Resources
+    1145 msosa Human Resources
+    ```
+* **Explanation:** Useful for extracting specific data based on a criterion.
 
-6.  **Conteggio delle Occorrenze di Errori (Esempio aggiuntivo):**
-    * **Obiettivo:** Contare quante volte la parola "error" appare nel file `server_logs.txt`.
-    * **Comando:** `grep -c 'error' server_logs.txt`
-    * **Output Esempio:** `6` (o il numero effettivo di errori)
-    * **Spiegazione:** L'opzione `-c` di `grep` restituisce solo il conteggio delle righe che contengono il pattern.
+### 6. Counting Error Occurrences (Additional Example):
+* **Objective:** To count how many times the word "error" appears in the `server_logs.txt` file.
+* **Command:** `grep -c 'error' server_logs.txt`
+* **Output Example:** `6`
+* **Explanation:** The `-c` option of `grep` returns only the count of lines containing the pattern.
 
-### Esercizi di Ricerca Avanzata con find
+## Advanced Search with `find`
 
-Questa sezione esplora l'uso del comando `find` per localizzare file e directory basandosi su 
-vari criteri.
+This section explores the use of the `find` command for locating files and directories based on various criteria.
 
-**1. Ricerca di File per Nome:**
-* **Obiettivo:** Trovare tutti i file con estensione `.txt` nella directory corrente e nelle 
-sue sottodirectory.
-* **Comando:** `find . -name "*.txt"`
-* **Output Esempio:**
+### 1. Searching Files by Name:
+* **Objective:** To find all files with a `.txt` extension in the current directory and its subdirectories.
+* **Command:** `find . -name "*.txt"`
+* **Output Example:**
     ```
     ./logs/server logs.txt
     ./reports/users/Q1_access.txt
     ./reports/users/Q1_added_users.txt
     ./reports/users/Q1_deleted_users.txt
-    ./reports/users/Q2_access.txt
-    ./reports/users/Q2_added_users.txt
-    ./reports/users/Q2_deleted_users.txt
-    ./reports/users/Q3_access.txt
-    ./reports/users/Q3_added_users.txt
-    ./reports/users/Q3_deleted_users.txt
-    ./reports/users/Q4_access.txt
-    ./reports/users/Q4_added_users.txt
-    ./reports/users/Q4_deleted_users.txt
     ```
-* **Spiegazione:** Il comando `find .` inizia la ricerca dalla directory corrente. L'opzione 
-`-name "*.txt"` cerca file il cui nome corrisponde al pattern (tutti i file con estensione 
-`.txt`).
+* **Explanation:** The `find .` command starts the search from the current directory. The `-name "*.txt"` option searches for files whose name matches the pattern (all 
+files with a `.txt` extension).
 
-**2. Ricerca di File per Dimensione (Esempio aggiuntivo):**
-* **Obiettivo:** Trovare tutti i file più grandi di 1 Megabyte (`1M`) nella directory 
-corrente e nelle sue sottodirectory.
-* **Comando:** `find . -size +1M`
-* **Output Esempio:**
+### 2. Searching Files by Size:
+* **Objective:** To find all files larger than 1 Megabyte (`1M`) in the current directory and its subdirectories.
+* **Command:** `find . -size +1M`
+* **Output Example:**
     ```
     ./large_data_file.zip
     ./old_backup.tar.gz
     ```
-* **Spiegazione:** L'opzione `-size` permette di filtrare per dimensione. `+1M` significa 
-"più grande di 1 Megabyte".
+* **Explanation:** The `-size` option allows filtering by size. `+1M` means "larger than 1 Megabyte".
 
+### 3. Searching and Executing Commands:
+* **Objective:** To combine `find` with `-exec` to run a command on the found files (e.g., search for a specific keyword in all `.txt` files).
+* **Command:** `find . -name "*.txt" -exec grep "keyword" {} \;`
+* **Explanation:** This command first finds all `.txt` files. For each found file (`{}`), it then executes `grep "keyword"` on that file. The `\;` marks the end of the 
+`-exec` command.
+    *(Note: This example doesn't have a specific output shown, as it depends on whether "keyword" is found in your files. It's more of a functional demonstration.)*
 ---
+## Reflections and Future Improvements
 
-## Riflessioni e Miglioramenti Futuri
-
-Questa schermata rappresenta un punto di partenza per l'analisi dei log. In futuro, potrei estendere questo esercizio 
-per:
-* Filtrare i log per livello di gravità (es. solo `error` o `warning`) usando `grep`.
-* Contare le occorrenze di eventi specifici.
-* Automatizzare queste operazioni con uno script Bash.
-
+This exercise represents a starting point for log analysis. In the future, I could extend this exercise to:
+* Filter logs by severity level (e.g., only `error` or `warning`) using `grep`.
+* Count the occurrences of specific events.
+* Automate these operations with a Bash script.
 ---

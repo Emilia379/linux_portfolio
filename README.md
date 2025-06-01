@@ -1,34 +1,22 @@
-# Portfolio di Comandi Linux e Shell Scripting
+# My Linux Command Line Portfolio
 
-Benvenuto nel mio portfolio di esercizi e progetti sulla riga di comando Linux!
+This portfolio showcases my practical skills in using the Linux command line for various system administration and data analysis tasks. Each section contains detailed 
+explanations, commands, and example outputs, often supported by screenshots, to demonstrate proficiency.
 
-Questo repository è una dimostrazione pratica delle mie competenze nell'uso dei comandi fondamentali di Linux e nella 
-manipolazione della shell. Ho costruito questi esercizi per consolidare la mia comprensione e mostrare la mia 
-capacità di navigare nel filesystem, gestire file e directory, cercare e filtrare dati, e automatizzare operazioni.
+## Contents
 
----
+* **[Data Filtering and Manipulation with `grep` and Pipes](analisi_dati_shell/README.md):** Demonstrations of advanced data searching, filtering, and combining commands 
+using standard input/output redirection.
+* **[File and Directory Permissions Management](gestione_permessi/README.md):** Practical exercises on understanding, checking, and modifying file/directory permissions 
+for effective access control and system security.
 
-## Contenuti del Portfolio
+## Future Plans
 
-* **[Esercizi Base](esercizi_base/README.md)**: Fondamenti di navigazione, creazione, copia, spostamento e 
-cancellazione di file e directory.
-* **[Analisi e Visualizzazione Dati (con `find`, `grep` e Pipe)](analisi_dati_shell/README.md)**: Dimostrazioni di 
-capacità avanzate di ricerca, filtraggio e concatenazione di comandi applicate a log e dati.
-* **[Gestione dei permessi di file e directory in Linux](gestione_permessi/README.md)**: Esercizi pratici sulla 
-comprensione e la modifica dei permessi di file e directory per la sicurezza ed il controllo degli accessi.
----
-
-## Tecnologie Utilizzate
-
-* **Bash Shell**
-* **Comandi Linux standard** (`ls`, `cd`, `mkdir`, `touch`, `cp`, `mv`, `rm`, `cat`, `grep`, `find`, `|`, ecc.)
-* **(Eventuali altri strumenti o linguaggi)**
+This portfolio will be continuously updated with new projects and expanded skill sets, including:
+* Advanced shell scripting for automation.
+* More complex data processing techniques.
+* A dedicated section on **SQL for Data Management and Analysis.**
+* Projects involving cloud platforms and basic networking.
 
 ---
 
-## Come Utilizzare Questo Portfolio
-
-Ogni directory di esercizi contiene un proprio `README.md` con la descrizione degli esercizi e le soluzioni. Puoi 
-replicare l'ambiente di prova seguendo le istruzioni fornite.
-
-Spero che tu possa trovare utile questo portfolio per valutare le mie competenze.
