@@ -166,6 +166,47 @@ di file specifici.
     * **Output Esempio:** `6` (o il numero effettivo di errori)
     * **Spiegazione:** L'opzione `-c` di `grep` restituisce solo il conteggio delle righe che contengono il pattern.
 
+### Esercizi di Ricerca Avanzata con find
+
+Questa sezione esplora l'uso del comando `find` per localizzare file e directory basandosi su 
+vari criteri.
+
+**1. Ricerca di File per Nome:**
+* **Obiettivo:** Trovare tutti i file con estensione `.txt` nella directory corrente e nelle 
+sue sottodirectory.
+* **Comando:** `find . -name "*.txt"`
+* **Output Esempio:**
+    ```
+    ./logs/server logs.txt
+    ./reports/users/Q1_access.txt
+    ./reports/users/Q1_added_users.txt
+    ./reports/users/Q1_deleted_users.txt
+    ./reports/users/Q2_access.txt
+    ./reports/users/Q2_added_users.txt
+    ./reports/users/Q2_deleted_users.txt
+    ./reports/users/Q3_access.txt
+    ./reports/users/Q3_added_users.txt
+    ./reports/users/Q3_deleted_users.txt
+    ./reports/users/Q4_access.txt
+    ./reports/users/Q4_added_users.txt
+    ./reports/users/Q4_deleted_users.txt
+    ```
+* **Spiegazione:** Il comando `find .` inizia la ricerca dalla directory corrente. L'opzione 
+`-name "*.txt"` cerca file il cui nome corrisponde al pattern (tutti i file con estensione 
+`.txt`).
+
+**2. Ricerca di File per Dimensione (Esempio aggiuntivo):**
+* **Obiettivo:** Trovare tutti i file più grandi di 1 Megabyte (`1M`) nella directory 
+corrente e nelle sue sottodirectory.
+* **Comando:** `find . -size +1M`
+* **Output Esempio:**
+    ```
+    ./large_data_file.zip
+    ./old_backup.tar.gz
+    ```
+* **Spiegazione:** L'opzione `-size` permette di filtrare per dimensione. `+1M` significa 
+"più grande di 1 Megabyte".
+
 ---
 
 ## Riflessioni e Miglioramenti Futuri
