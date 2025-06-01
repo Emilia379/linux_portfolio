@@ -111,7 +111,8 @@ concatenare i comandi, permettendo un'analisi più complessa.
         2022-09-28 13:56:22 error The password is incorrect
         2022-09-28 15:56:22 error The username is incorrect
         2022-09-28 16:56:22 error The password is incorrect
-        2022-09-29 15:56:22 error An unexpected error occurred
+        2022-09-29 13:56:22 error An unexpected error occurred
+        2022-09-29 15:56:22 error Unauthorized access
         2022-09-29 16:56:22 error Unauthorized access
         ```
     * **Spiegazione:** Il comando `grep 'pattern' file` cerca le righe che contengono esattamente la 'pattern' 
@@ -173,7 +174,6 @@ Questa schermata rappresenta un punto di partenza per l'analisi dei log. In futu
 per:
 * Filtrare i log per livello di gravità (es. solo `error` o `warning`) usando `grep`.
 * Contare le occorrenze di eventi specifici.
-* Analizzare i log per username o IP usando una combinazione di `grep`, `awk`, `cut`.
 * Automatizzare queste operazioni con uno script Bash.
 
 ---
