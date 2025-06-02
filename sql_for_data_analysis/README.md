@@ -122,6 +122,83 @@ condition.
 * **Explanation:** `GROUP BY` groups rows that have the same values in specified columns into a summary row. 
 `COUNT(*)` aggregates the count for each group.
 
+### 6. Find Users with Specific Email Domains (`LIKE`):
+* **Objective:** Find all users whose email address ends with '@example.com'.
+* **SQL Query:**
+    ```sql
+    SELECT username, email FROM users WHERE email LIKE '%@example.com';
+    ```
+* **Expected Output:**
+    ```
+    username | email
+    ----------|--------------------
+    alice    | alice@example.com
+    bob      | bob@example.com
+    charlie  | charlie@example.com
+    eve      | eve@example.com
+    ```
+* **Explanation:** The `LIKE` operator is used in a `WHERE` clause to search for a specified pattern in a column. The 
+`%` is a wildcard character representing zero or more characters.
+
+### 7. Filter Activities by Type and IP Address (`AND`):
+* **Objective:** Find all 'login' activities that originated from the IP address '192.168.1.10'.
+* **SQL Query:**
+    ```sql
+    SELECT user_id, activity_type, ip_address
+    FROM user_activity
+    WHERE activity_type = 'login' AND ip_address = '192.168.1.10';
+    ```
+* **Expected Output:**
+    ```
+    user_id | activity_type | ip_address
+    --------|---------------|------------
+    1       | login         | 192.168.1.10
+    ```
+* **Explanation:** The `AND` operator displays a record if *all* the conditions separated by `AND` are true.
+
+### 8. Find Activities by Multiple Types (`OR`):
+* **Objective:** List all 'login' or 'logout' activities.
+* **SQL Query:**
+    ```sql
+    SELECT user_id, activity_type, activity_date
+    FROM user_activity
+    WHERE activity_type = 'login' OR activity_type = 'logout';
+    ```
+* **Expected Output:**
+    ```
+    user_id | activity_type | activity_date
+    --------|---------------|---------------------
+    1       | login         | 2023-05-01 08:00:00
+    1       | logout        | 2023-05-01 08:30:00
+    2       | login         | 2023-05-03 10:00:00
+    3       | login         | 2023-05-04 11:30:00
+    4       | login         | 2023-05-05 14:00:00
+    2       | logout        | 2023-05-06 16:00:00
+    1       | login         | 2023-05-02 09:15:00
+    ```
+* **Explanation:** The `OR` operator displays a record if *any* of the conditions separated by `OR` are true.
+
+### 9. Exclude Specific Activity Types (`NOT`):
+* **Objective:** List all activities that are NOT 'login' activities.
+* **SQL Query:**
+    ```sql
+    SELECT user_id, activity_type, activity_date
+    FROM user_activity
+    WHERE NOT activity_type = 'login';
+    ```
+* **Expected Output:**
+    ```
+    user_id | activity_type | activity_date
+    --------|---------------|---------------------
+    1       | view_page     | 2023-05-01 08:05:00
+    1       | logout        | 2023-05-01 08:30:00
+    2       | purchase      | 2023-05-03 10:15:00
+    3       | view_page     | 2023-05-04 11:45:00
+    4       | purchase      | 2023-05-05 14:30:00
+    2       | logout        | 2023-05-06 16:00:00
+    ```
+* **Explanation:** The `NOT` operator negates a condition, returning records where the condition is false.
+
 ## Conclusion and Future Enhancements
 
 These examples illustrate fundamental SQL querying capabilities crucial for data extraction and basic analysis. 
