@@ -7,10 +7,10 @@ explanations, commands, and example outputs, often supported by screenshots, to 
 
 * **[Essential Linux Commands: Navigation and Exploration](linux_basics/README.md):** Fundamental commands for navigating the filesystem, inspecting directories, and 
 viewing file contents.
-* **[Data Filtering and Manipulation with `grep` and Pipes](analisi_dati_shell/README.md):** Demonstrations of advanced data searching, filtering, and combining commands 
-using standard input/output redirection.
-* **[File and Directory Permissions Management](gestione_permessi/README.md):** Practical exercises on understanding, checking, and modifying file/directory permissions 
-for effective access control and system security.
+* **[Data Filtering and Manipulation with `grep` and Pipes](data_analysis_shell/README.md):** Demonstrations of 
+advanced data searching, filtering, and combining commands using standard input/output redirection.
+* **[File and Directory Permissions Management](file_permissions_management/README.md):** Practical exercises on 
+understanding, checking, and modifying file/directory permissions for effective access control and system security.
 * **[SQL for Data Management and Analysis](sql_for_data_analysis/README.md):** Demonstrates fundamental SQL querying 
 skills for data retrieval, filtering, joining, and aggregation.
 * **[Cybersecurity Log Analysis: Identifying Anomalies with Shell Commands](log_analysis_cybersec/README.md):** Practical application of 
