@@ -1,0 +1,18 @@
+2023-10-26 08:00:01 INFO: User 'alice' logged in from 192.168.1.10
+2023-10-26 08:00:05 INFO: Application started successfully.
+2023-10-26 08:00:10 WARNING: Disk space low on /var/log
+2023-10-26 08:00:15 INFO: User 'bob' logged in from 10.0.0.5
+2023-10-26 08:00:20 ERROR: Database connection failed for user 'admin'
+2023-10-26 08:00:25 INFO: Data backup completed.
+2023-10-26 08:00:30 AUTH_FAIL: Failed login attempt for user 'eve' from 
+203.0.113.20 (bad password)
+2023-10-26 08:00:35 INFO: User 'charlie' logged in from 192.168.1.11
+2023-10-26 08:00:40 ERROR: File integrity check failed for /etc/myapp.conf
+2023-10-26 08:00:45 INFO: System health check passed.
+2023-10-26 08:00:50 AUTH_FAIL: Repeated failed login for user 'eve' from 
+203.0.113.20 (account locked)
+2023-10-26 08:00:55 INFO: New session established for 'alice'
+2023-10-26 08:01:00 ERROR: Unknown internal server error.
+2023-10-26 08:01:05 CRITICAL: Unauthorized access attempt detected from 
+172.16.0.1. Dropping connection.
+2023-10-26 08:01:10 INFO: User 'bob' logged out.

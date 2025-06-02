@@ -11,6 +11,10 @@ viewing file contents.
 using standard input/output redirection.
 * **[File and Directory Permissions Management](gestione_permessi/README.md):** Practical exercises on understanding, checking, and modifying file/directory permissions 
 for effective access control and system security.
+* **[Cybersecurity Log Analysis: Identifying Anomalies with Shell 
+Commands](log_analysis_cybersec/README.md):** Practical application of 
+shell commands for detecting suspicious activities and critical events in 
+application logs.
 
 ## Future Plans
 
