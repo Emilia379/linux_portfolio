@@ -13,8 +13,7 @@ instability. I'll use a series of commands to filter, count, and summarize
 key security-related information.
 
 ## Sample Log File (`myapp.log`)
-
-```` ``` ````
+````
 2023-10-26 08:00:01 INFO: User 'alice' logged in from 192.168.1.10
 2023-10-26 08:00:05 INFO: Application started successfully.
 2023-10-26 08:00:10 WARNING: Disk space low on /var/log
@@ -29,7 +28,7 @@ key security-related information.
 2023-10-26 08:01:00 ERROR: Unknown internal server error.
 2023-10-26 08:01:05 CRITICAL: Unauthorized access attempt detected from 172.16.0.1. Dropping connection.
 2023-10-26 08:01:10 INFO: User 'bob' logged out.
-```` ``` ````
+```
 
 ## Analysis Steps and Commands
 
